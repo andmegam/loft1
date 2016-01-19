@@ -1,0 +1,63 @@
+.header {
+	width: 100%;
+	min-width: 1200px;
+	background-color: #eff3f7;
+}
+.container-header {
+	width: 1200px;
+	height: 117px;
+	line-height: 117px;
+}
+
+.logo {
+	float: left;
+}
+.logo img {
+	display:inline-block;
+	vertical-align:middle;
+}
+
+.logo-text {
+	position: absolute;
+	top:0;
+	left:-9999px;
+}
+
+.socials {
+	float: right;
+	font-size: 0;
+}
+
+.socials-item {
+	float: left;
+	padding-left: 24px;
+	/*background-color: red;*/
+}
+.socials-item-link {
+	display: inline-block;
+	vertical-align: middle;
+    width: 47px;
+    height: 47px;
+
+}
+
+.vk {background: url("../img/vk.png") no-repeat;}
+.vk:hover {background: url("../img/vk_hover.png") no-repeat;}
+
+.tw {background: url("../img/tw.png") no-repeat;}
+.tw:hover {background: url("../img/tw_hover.png") no-repeat;}
+
+.fb {background: url("../img/fb.png") no-repeat;}
+.fb:hover {background: url("../img/fb_hover.png") no-repeat;}
+
+.git {background: url("../img/git.png") no-repeat;}
+.git:hover {background: url("../img/git_hover.png") no-repeat;}
+
+.header-bottom-gradient {
+	height: 3px;
+	background: rgb(255,255,255);
+	background: -moz-linear-gradient(left,  rgb(255,255,255) 0%, rgb(28,102,122) 50%, rgb(255,255,255) 100%);
+	background: -webkit-linear-gradient(left,  rgb(255,255,255) 0%,rgb(28,102,122) 50%,rgb(255,255,255) 100%);
+	background: linear-gradient(to right,  rgb(255,255,255) 0%,rgb(28,102,122) 50%,rgb(255,255,255) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1);
+}
