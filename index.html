@@ -5,6 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=1230, initial-scale=1" />
 
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+
+
 <title>Машков Андрей | Обо мне</title>
 <meta name="description" content="" />
 <meta name="keywords" content="" />
@@ -14,15 +18,21 @@
 <link rel="stylesheet" href="css/normalize.css" type="text/css"/>
 
 <link rel="stylesheet" href="fonts/fira/fira.css" type="text/css"/>
+<link rel="stylesheet" href="fonts/proximanova/proximanova.css" type="text/css"/>
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
 <link rel="stylesheet" href="css/header.css" type="text/css"/>
 <link rel="stylesheet" href="css/aside.css" type="text/css"/>
+<link rel="stylesheet" href="css/content.css" type="text/css"/>
+<link rel="stylesheet" href="css/footer.css" type="text/css"/>
+
+
 
 <!--[if lt IE 9]>
 <script src="http://html5shiv-printshiv.googlecode.com/svn/trunk/html5shiv-printshiv.js"></script>
+
 <![endif]-->
 
-<!--[if lte IE 7]><link href="css/ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+
 </head>
 <body class="body">
 	<div class="wrapper">
@@ -48,39 +58,108 @@
 					</li>
 				</ul>
 			</div>
-			<div class="header-bottom-gradient">&nbsp;</div>
 		</header>
-		<main class="container">
-			<aside class="aside-left">
 
-				<ul class="navigation">
-					<li class="navigation-item activ">
-						<a class="navigation-item-link" href="#">Обо мне</a>
-					</li>
-					<li class="navigation-item">
-						<a class="navigation-item-link" href="#">Мои работы</a>
-					</li>
-					<li class="navigation-item">
-						<a class="navigation-item-link" href="#">Связаться со мной</a>
-					</li>
-				</ul>
+
+		<main class="container clearfix">
+			<aside class="aside-left">
+				<nav class="menu">
+					<ul class="navigation">
+						<li class="navigation-item activ">
+							<a class="navigation-item-link" href="#">Обо мне</a>
+						</li>
+						<li class="navigation-item ">
+							<a class="navigation-item-link" href="#">Мои работы</a>
+						</li>
+						<li class="navigation-item">
+							<a class="navigation-item-link" href="#">Связаться со мной</a>
+						</li>
+					</ul>
+				</nav>
 
 				<div class="contacts-header">Контакты</div>
 				<ul class="contacts">
 					<li class="contacts-item email">
-						<a class="contacts-item-link" href="#">andmmm@mail.ru</a>
+						<a class="contacts-item-link" href="mailto:andmmm@mail.ru">andmmm@mail.ru</a>
 					</li>
 					<li class="contacts-item phone">
-						<a class="contacts-item-link" href="#">+7-927-132-76-00</a>
+						<a class="contacts-item-link" href="skype:+79271327600?call">+79271327600</a>
 					</li>
 					<li class="contacts-item skype">
-						<a class="contacts-item-link" href="#">aa.mashkov</a>
+						<a class="contacts-item-link" href="skype:aa.mashkov?call">aa.mashkov</a>
 					</li>
 				</ul>
 
 			</aside>
 			<section class="content">
-content
+				<article class="myinfo">
+					<div class="myinfo-header">Основная информация</div>
+					<div class="myinfo-container clearfix">
+						<div class="left-data">
+							<div class="pic avatar">
+								<img src="img/avatar.jpg" >
+							</div>
+						</div>
+						<div class="right-data">
+							<ul class="info">
+								<li class="myinfo-data-item clearfix">
+									<div class="info-item-title">Меня зовут:</div>
+									<div class="info-item-desc">Машков Андрей Александрович</div>
+								</li>
+								<li class="myinfo-data-item clearfix">
+									<div class="info-item-title">Мой возраст:</div>
+									<div class="info-item-desc">32 года</div>																			</li>
+								<li class="myinfo-data-item clearfix">
+									<div class="info-item-title">Мой город:</div>
+									<div class="info-item-desc">Саратов, Россия</div>																	</li>
+								<li class="myinfo-data-item clearfix">
+									<div class="info-item-title">Моя специализация:</div>
+									<div class="info-item-desc">FRONTEND разработчик</div>																</li>
+								<li class="myinfo-data-item clearfix">
+									<div class="info-item-title">Ключевые навыки:</div>																		<div class="skillsblock">
+										<div class="skill">html</div>
+										<div class="skill">css</div>
+										<div class="skill">javascript</div>
+										<div class="skill">gulp</div>
+										<div class="skill">git</div>
+										<div class="skill">jquery</div>
+<!--										<div class="skill">php</div>-->
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</article>
+
+				<article class="myinfo">
+					<div class="myinfo-header">Опыт работы</div>
+					<div class="myinfo-container">
+						<div class="row rabota">
+							<h3 class="row-first">ООО "Фармнет" - Руководитель отдела обработки информации</h3>
+							<h2 class="row-second">Июнь 2006 - по настоящее время</h2>
+						</div>
+						<div class="row rabota">
+							<h3 class="row-first">ОАО АКБ "Пробизнесбанк" - Программист-разработчик SQL</h3>
+							<h2 class="row-second">Март 2010 - Август 2010</h2>
+						</div>
+					</div>
+				</article>
+
+				<article class="myinfo">
+					<div class="myinfo-header">Образование</div>
+					<div class="myinfo-container">
+						<div class="row vuz">
+							<h3 class="row-first">Высшее - СГУ имени Н. Г. Чернышевского (г. Саратов)</h3>
+							<h2 class="row-second">Сентябрь 2001 - Май 2006</h2>
+						</div>
+						<div class="row course">
+							<h3 class="row-first">Курс от Академии Лидогенерации по специальности "Лид-Менеджер</h3>
+							<h2 class="row-second">Январь 2015 - Март 2015
+								(<a href="http://lead-academy.ru/certificates/c/foO1GVvMs3fd" target="_blank">сертификат</a>)
+							</h2>
+						</div>
+					</div>
+				</article>
 			</section>
 		</main>
 
@@ -88,15 +167,21 @@ content
 	</div>
 
 	<footer class="footer">
-		<div class="container">
-			<div class="copyright">© 2016. Это мой сайт, пожалуйста, не копируйте и не воруйте его</div>
+		<div class="container container-footer clearfix">
+			<div class="login">
+				<a class="lock" href="#" title="Авторизация">вход</a>
+			</div>
+			<div class="copyright">
+				© 2015. Это мой сайт, пожалуйста, не копируйте и не воруйте его!
+			</div>
 		</div>
 	</footer>
-
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/jquery-1.9.0.min.js"><\/script>');</script>
 	<script src="js/main.js"></script>
+
+
 </body>
 </html>
 

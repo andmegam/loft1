@@ -1,0 +1,35 @@
+.container-footer {
+	display: table;
+	height: 100%;
+}
+.login {
+	width: 250px;
+
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 0px;
+
+
+
+}
+.lock {
+	display: block;
+	width: 20px;
+	height: 32px;
+	background: url("../img/lockclose.png")  center center no-repeat;
+	padding-left: 80px;
+}
+.lock:hover {
+	background: url("../img/lockopen.png")  center center no-repeat;
+}
+
+.copyright {
+	width: 710px;
+	display: table-cell;
+	vertical-align: middle;
+	font-family: "fira_sanslight";
+	font-size: 13px;
+	color: #4a545d;
+	padding-left: 25px;
+
+}
