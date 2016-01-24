@@ -1,10 +1,14 @@
+@import '../fonts/fira/fira.css';
+@import '../fonts/proximanova/proximanova.css';
+
 * {box-sizing: border-box;}
 
 html, body {
 	width: 100%;
 	height: 100%;
 	background-image: url("../img/bg.png");
-	font-family: "Arial Black";
+	font: normal 1em 'fira_sanslight';
+	color: #4a545d;
 }
 ul {
 	list-style: none;
@@ -13,27 +17,229 @@ ul {
 }
 
 .wrapper {
-
-
 	min-height: 100%;
     height: auto !important;
     height: 100%;
     margin: 0 0 -80px 0; /* отрицательный нижний отступ на высоту футера */
     padding: 0;
+}
 
+/* HEADER BEGIN*/
+
+.header {
+	width: 100%;
+	min-width: 1200px;
+	background-color: #eff3f7;
+	background: #eff3f7 url(../img/line.png) bottom no-repeat;
+}
+
+.container-header {
+	width: 1200px;
+	height: 119px;
+	line-height: 117px;
+}
+
+.logo {
+	float: left;
+}
+.logo img {
+	display:inline-block;
+	vertical-align:middle;
+}
+
+.logo-text {
+	position: absolute;
+	top:0;
+	left:-9999px;
+}
+
+.socials {
+	float: right;
+	font-size: 0;
+}
+
+.socials-item {
+	float: left;
+	padding-left: 24px;
+	/*background-color: red;*/
+}
+.socials-item:first-child{
+	padding-left: 0px;
+}
+.socials-item-link {
+	display: inline-block;
+	vertical-align: middle;
+    width: 47px;
+    height: 47px;
 
 }
 
+.vk {background: url("../img/vk.png") no-repeat; }
+.vk:hover {background: url("../img/vk_hover.png") no-repeat;}
+
+.tw {background: url("../img/tw.png") no-repeat;}
+.tw:hover {background: url("../img/tw_hover.png") no-repeat;}
+
+.fb {background: url("../img/fb.png") no-repeat;}
+.fb:hover {background: url("../img/fb_hover.png") no-repeat;}
+
+.git {background: url("../img/git.png") no-repeat;}
+.git:hover {background: url("../img/git_hover.png") no-repeat;}
+
+
+/* HEADER END*/
+
+/* MAIN BEGIN*/
 .container {
 	width: 960px;
 	margin: 0 auto;
 }
+	/*left aside begin*/
+.aside-left {
+	float: left;
+	width: 250px;
+	padding: 39px 0px 24px 0px;
+}
 
+	/*navigation and contacts begin*/
+
+
+ .navigation {
+ 	overflow: hidden;
+ 	background: #eff3f7;
+ 	border-radius: 4px;
+ 	margin-bottom: 26px;
+ }
+ .navigation .navigation-list {
+ 	list-style: none;
+ 	margin: 0;
+ 	padding: 0;
+ }
+.navigation .navigation-item {
+	border-top: 2px solid #3ba8c0;
+	margin: 0 10px;
+}
+.navigation .navigation-item:first-child {
+	border-top: none;
+}
+.navigation .navigation-item.current {
+	background: #3ba8c0;
+	margin: 0;
+	border-bottom: none;
+	padding-left: 11px;
+	margin-bottom: -2px;
+}
+.navigation .navigation-item.current .navigation-link {
+	color: #f9fafb;
+	font-size: 22px;
+}
+.navigation .navigation-link {
+	font-family: 'fira_sansbook';
+	display: block;
+	font-size: 20px;
+	text-decoration: none;
+	color: #959aa8;
+	margin-left: 16px;
+	padding: 20px 0px;
+}
+
+.navigation .navigation-link:hover {
+	color: #3ba8c0;
+}
+.navigation .navigation-link:active {
+	color: #3ba8c0;
+	font-size: 18px;
+	padding: 22px 0px;
+}
+.navigation .navigation-link:focus {
+	color: #3ba8c0;
+}
+
+/*Контакты*/
+
+.contacts-header {
+	margin-top: 25px;
+
+	height: 40px;
+	line-height: 40px;
+	padding: 0;
+
+	font-family: "fira_sansbook";
+	font-size: 21px;
+
+	padding-left: 19px;
+	color: #ffffff;
+
+	border-radius: 4px 4px 0 0;
+	-ms-border-radius: 4px 4px 0 0;
+	background-color: #3ba8c0;
+	border-top: 3px solid  #3ba8c0;
+}
+
+
+.contacts {
+	font-family: "fira_sansbook";
+	margin-bottom: 24px;
+}
+.contacts-item {
+	background-color: #51daf8;
+}
+
+.contacts-item-link {
+	height: 40px;
+	line-height: 40px;
+	text-decoration: none;
+	color: #ffffff;
+	font-size: 17px;
+	margin-left: 82px;
+}
+.contacts-item-link:hover {
+	border-bottom: 1px solid #FFFFFF;
+}
+
+.contacts-item a:before {
+	content: " ";
+	float: left;
+}
+
+.contacts-item.email {
+	background: url(../img/email.png)  42px 11px no-repeat;
+	background-color: #41b9d4;
+}
+
+.contacts-item.phone {
+	background: url(../img/phone.png)   43px 10px no-repeat;
+	background-color: #48cbe8;
+}
+
+.contacts-item.skype {
+	background: url(../img/skype.png)   43px 10px no-repeat;
+	background-color: #51daf8;
+	border-radius: 0 0 4px 4px;
+	-ms-border-radius: 4px 4px 0 0;
+}
+
+	/*navigation and contacts end*/
+
+
+	/*left aside end*/
+
+
+	/* content begin*/
+.content {
+	float: right;
+	width: 710px;
+	padding: 39px 0px 26px 60px;
+}
+	/* content end*/
+
+/* MAIN END*/
 
 .empty {
 	height: 80px;
 }
 
+/* FOOTER BEGIN*/
 .footer {
 	width: 100%;
 	min-width: 1200px;
@@ -45,7 +251,46 @@ ul {
 
 }
 
+.container-footer {
+	padding-top: 23px;
+	position: relative;
+}
 
+.lock {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 0px;
+
+}
+
+.lock .lock-inner {
+	padding-left: 25px;
+	display: block;
+	height: 40px;
+	font-size: 16px;
+	line-height: 2.2;
+	color: #4a545d;
+	text-decoration: none;
+	background: url('../img/lockclose.png') no-repeat;
+}
+.lock .lock-inner:hover,
+.lock .lock-inner:active,
+.lock .lock-inner:focus {
+	text-decoration: underline;
+	background: url('../img/lockopen.png') no-repeat;
+}
+.copyright {
+	width: 100%;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+	font-family: "fira_sanslight";
+	font-size: 13px;
+	color: #4a545d;
+	padding-left: 25px;
+}
+
+/* FOOTER END*/
 
 .clearfix:before, .clearfix:after {
     content: " ";

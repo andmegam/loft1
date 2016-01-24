@@ -1,0 +1,123 @@
+
+.myinfo {
+	background-color: #eff3f7;
+	border-radius: 4px;
+	 -ms-border-radius: 4px;
+
+	padding-bottom: 20px;
+	margin-bottom: 26px;
+
+}
+.myinfo-header {
+
+	display: inline-block;
+	vertical-align: middle;
+
+	font-family: "fira_sansbook";
+	font-size: 27px;
+	color:#3ba8c0;
+
+	height: 69px;
+	line-height: 69px;
+
+	padding: 0px 25px 0px 20px;
+	border-bottom: 2px solid #3ba8c0;
+
+}
+
+.myinfo-container{
+	padding: 10px 20px 25px 20px;
+}
+.works {
+	display: table;
+	padding: 0px;
+
+}
+.project {
+	display: inline-block;
+	vertical-align: top;
+	width: 183px;
+	text-align: center;
+	margin: 30px 15px 5px 15px;
+}
+
+.project-ava {
+	display: block;
+	border: 2px solid #3ba8c0;
+	border-radius: 4px;
+	 -ms-border-radius: 4px;
+	width: 183px;
+	height: 127px;
+	overflow: hidden;
+	position: relative;
+}
+.project-ava:hover:before {
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: ' ';
+  text-align: center;
+  background-color: rgba(1, 108, 164, 0.749);
+
+}
+
+.project-ava:hover .project-name {
+	position: absolute;
+	left: 10%; right: 10%;
+	top: 40%;
+    font-size: 12px;
+	padding: 2px 2px;
+	border: 2px solid #FFFFFF;
+	color: #FFFFFF;
+	background-color: rgb(1, 108, 164);
+	border-radius: 5px;
+	z-index: 1;
+	font-family: "fira_sansbook";
+	font-size: 14px;
+}
+
+.project-link a{
+	font-family: "fira_sanslight_italic";
+	font-size: 13px;
+	text-decoration: none;
+	color: #3ba8c0;
+}
+.project-descr {
+	font-family: "fira_sansbook";
+	font-size: 15px;
+	color: #4a545d;
+	font-weight: 400;
+	line-height: 1.2;
+	padding: 10px 5px;
+}
+
+.project.newproject {
+	cursor: pointer;
+	position: relative;
+	border: 2px dashed #3ba8c0;
+	border-radius: 4px;
+	width: 180px;
+	height: 125px;
+	text-align: center;
+	background: url('../img/addproject.png')  center 40px no-repeat;
+	background-color: #edf8fc;
+}
+
+a.addproject {
+	position: absolute;
+	padding-top: 80px;
+	left:0;
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+	font: normal 13px 'fira_sanslight';
+	color: #3ba8c0;
+    text-decoration: none;
+	/*background-color: aqua;*/
+
+}
+
+.project.newproject:hover {
+	background-color: white;
+}
