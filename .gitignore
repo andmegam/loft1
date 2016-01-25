@@ -3,4 +3,5 @@
 # Example .gitignore files: https://github.com/github/gitignore
 /bower_components/
 /node_modules/
-/fonts/
+/js/jquery-1.9.0.min.js
+/popup.html

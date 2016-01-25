@@ -58,9 +58,6 @@
 }
 .myinfo-data-item {
 	margin-bottom: 5px;
-	/*margin-bottom: 3px;
-	margin-left: 7px;
-	height: 30px;*/
 }
 .info-item-title {
 	float: left;
@@ -96,8 +93,6 @@
 	-moz-border-radius: 2px;
 	border-radius: 2px;
 	background: url("../img/skillbg.png") center center repeat-x  ;
-	/*border: 1px solid transparent;*/
-
 }
 .row {
 	margin: 10px 10px 0px 25px;

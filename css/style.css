@@ -31,10 +31,11 @@ ul {
 	min-width: 1200px;
 	background-color: #eff3f7;
 	background: #eff3f7 url(../img/line.png) bottom no-repeat;
+	margin-bottom: 39px;
 }
 
 .container-header {
-	width: 1200px;
+	min-width: 1200px;
 	height: 119px;
 	line-height: 117px;
 }
@@ -61,7 +62,6 @@ ul {
 .socials-item {
 	float: left;
 	padding-left: 24px;
-	/*background-color: red;*/
 }
 .socials-item:first-child{
 	padding-left: 0px;
@@ -74,17 +74,51 @@ ul {
 
 }
 
-.vk {background: url("../img/vk.png") no-repeat; }
-.vk:hover {background: url("../img/vk_hover.png") no-repeat;}
+.vk {
+	background: url("../img/spritesheet.png") no-repeat;
+	width: 47px;
+    height: 47px;
+    background-position: -195px -62px;
+}
 
-.tw {background: url("../img/tw.png") no-repeat;}
-.tw:hover {background: url("../img/tw_hover.png") no-repeat;}
+.vk:hover {background: url("../img/spritesheet.png") no-repeat;
+    width: 47px;
+    height: 47px;
+    background-position: -197px -119px;
+}
 
-.fb {background: url("../img/fb.png") no-repeat;}
-.fb:hover {background: url("../img/fb_hover.png") no-repeat;}
+.tw {background: url("../img/spritesheet.png") no-repeat;
+    width: 47px;
+    height: 47px;
+    background-position: -140px -119px;
+}
+.tw:hover {background: url("../img/spritesheet.png") no-repeat;
+    width: 47px;
+    height: 47px;
+    background-position: -201px -5px;
+}
 
-.git {background: url("../img/git.png") no-repeat;}
-.git:hover {background: url("../img/git_hover.png") no-repeat;}
+.fb {background: url("../img/spritesheet.png") no-repeat;
+    width: 47px;
+    height: 47px;
+    background-position: -114px -5px;
+}
+.fb:hover {background: url("../img/spritesheet.png") no-repeat;
+	width: 47px;
+    height: 47px;
+    background-position: -5px -62px;
+}
+
+.git {background: url("../img/spritesheet.png") no-repeat;
+    width: 47px;
+    height: 47px;
+    background-position: -62px -62px;
+}
+.git:hover {background: url("../img/spritesheet.png") no-repeat;
+    width: 47px;
+    height: 47px;
+    background-position: -119px -62px;
+}
 
 
 /* HEADER END*/
@@ -98,7 +132,6 @@ ul {
 .aside-left {
 	float: left;
 	width: 250px;
-	padding: 39px 0px 24px 0px;
 }
 
 	/*navigation and contacts begin*/
@@ -158,8 +191,6 @@ ul {
 /*Контакты*/
 
 .contacts-header {
-	margin-top: 25px;
-
 	height: 40px;
 	line-height: 40px;
 	padding: 0;
@@ -229,7 +260,40 @@ ul {
 .content {
 	float: right;
 	width: 710px;
-	padding: 39px 0px 26px 60px;
+	padding: 0px 0px 26px 60px;
+}
+
+
+.myinfo {
+	background-color: #eff3f7;
+	border-radius: 4px;
+	 -ms-border-radius: 4px;
+
+	padding-bottom: 20px;
+	margin-bottom: 26px;
+
+}
+.myinfo-header {
+
+	display: inline-block;
+	vertical-align: middle;
+
+	font-family: "fira_sansbook";
+	font-size: 27px;
+	font-weight: normal;
+	padding: 0; margin: 0;
+	color:#3ba8c0;
+
+	height: 69px;
+	line-height: 69px;
+
+	padding: 0px 25px 0px 20px;
+	border-bottom: 2px solid #3ba8c0;
+
+}
+
+.myinfo-container{
+	padding: 0px 20px 25px 20px;
 }
 	/* content end*/
 

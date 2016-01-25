@@ -67,15 +67,13 @@
 	margin: auto;
 	width: 400px;
 }
-.contact-form {
-	margin: auto;
-	width: 400px;
-}
+
 .mycontact {
  float: right;
  min-width: 650px;
- min-height: 840px;
+ padding-bottom: 50px;
  background: #eff3f7;
+
  margin-bottom: 40px;
  font-family: 'fira_sanslight';
  border-radius: 4px;
@@ -90,7 +88,7 @@
 }
 
 .mycontact-header {
-	height: 122px;
+	height: 139px;
 	margin: 0px;
 	margin-bottom: 40px;
 	padding: 0px;
@@ -128,7 +126,7 @@
 	font-size: 13px;
 	border: 1px solid #48cbe8;
 	border-radius: 4px;
-	padding-left: 12px;
+	overflow: hidden;
 }
 .capture-code {
 	float: right;

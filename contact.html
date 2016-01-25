@@ -56,14 +56,14 @@
 			<aside class="aside-left">
 
 				<nav class="navigation">
-					<ul class="navigation-list">
+					<ul class="navigation-list" id="navigation-list">
 						<li class="navigation-item">
 							<a href="index.html" class="navigation-link">Обо мне</a>
 						</li>
 						<li class="navigation-item">
 							<a href="myworks.html" class="navigation-link">Мои работы</a>
 						</li>
-						<li class="navigation-item current">
+						<li class="navigation-item">
 							<a href="contact.html" class="navigation-link">Связаться со мной</a>
 						</li>
 					</ul>
@@ -91,29 +91,28 @@
 						<div class="row-top clearfix">
 							<div class="leadname">
 								<span class="field-text">Имя</span>
-								<input id="leadname" qtip-position="left" qtip-content="Вы не ввели имя" class="text" type="text" placeholder="Как к вам обращаться">
+								<input id="leadname" class="text" type="text" placeholder="Как к вам обращаться">
 							</div>
 							<div class="leademail">
 								<span class="field-text">Email</span>
-								<input id="leademail" qtip-position="right" qtip-content="Вы не ввели email" class="text" type="text" placeholder="Куда мне писать">
+								<input id="leademail" class="text" type="text" placeholder="Куда мне писать">
 							</div>
 						</div>
 
 						<div class="leadmessage clearfix">
 							<span class="field-text">Сообщение</span>
-							<textarea id="leadmessage" qtip-position="left" qtip-content="Ваш вопрос" class="text" placeholder="Кратко в чем суть"></textarea>
+							<textarea id="leadmessage" class="text" placeholder="Кратко в чем суть"></textarea>
 						</div>
 
 					<div class="leadcapture clearfix">
 						<span class="field-text capture-text">Введите код, указанный на картинке</span>
 						<div class="capture">
-							<span class="img-capture">CaptureImage</span>
+							<img src="php/captcha.php" alt="capturecode" />
 						</div>
 						<div class="capture-code">
-							<input id="capture" qtip-position="right" qtip-content="Вы не ввели код" class="capture-code-text" type="text" placeholder="Введите код">
+							<input id="capture" class="capture-code-text" type="text" placeholder="Введите код">
 						</div>
 					</div>
-
 					<div class="area-buttons clearfix">
 						<button class="button button-send" type="submit" value="submit">Отправить</button>
 						<button class="button button-clear" type="reset" value="clear">Очистить</button>

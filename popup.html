@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=1230, initial-scale=1" />
+
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+
+<title>Машков Андрей | Обо мне</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="" />
+
+
+<link rel="stylesheet" href="css/normalize.css" type="text/css"/>
+<link rel="stylesheet" href="css/style.css" type="text/css"/>
+<link rel="stylesheet" href="css/myworks.css" type="text/css"/>
+
+
+
+
+</head>
+<body class="body">
+
+
+<form class="add-project-form" method="post" name="add_project_form">
+	<div class="add-project-header">Добавление проекта
+		<img class="close-project" src="img/close-button.png" alt="Close window" >
+	</div>
+	<div class="input-area">
+		<div class="text-label">Название проекта</div>
+		<input id="prj-name" qtip-position="left" qtip-content="введите название" class="input input-text" type="text" placeholder="Введите название">
+		<div class="text-label">Картинка проекта</div>
+
+		<div class="upload-image-form">
+		<input id="upload-file" class="hidden-form" type="file" name="upload">
+		<input id="fake-upload" qtip-position="left" qtip-content="изображение" class="upload-button" type="text" placeholder="Загрузите изображение" type="file" name="upload">
+		</div>
+
+
+		<div class="text-label">URL проекта</div>
+		<input id="prj-link" qtip-position="left" qtip-content="ссылка на проект" class="input input-text" type="text" placeholder="Добавьте ссылку">
+		<div class="text-label">Описание</div>
+		<textarea id="prj-description" qtip-position="left" qtip-content="описание проекта" class="input input-text about-project" placeholder="Пара слов о вашем проекте"></textarea>
+		<div class="button-wrap">
+		<button class="button-add" type="submit" value="Submit">Добавить</button>
+		</div>
+	</div>
+</form>
+
+
+
+</body>
+</html>
+

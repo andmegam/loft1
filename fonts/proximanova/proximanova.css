@@ -1,0 +1,10 @@
+/*http://www.fontsquirrel.com/fonts/open-sans*/
+@font-face {
+  font-family: "proximanovacond-semibold";
+  src: url(proximanovacond-semibold.otf) format("opentype");
+}
+
+@font-face {
+	font-family: 'proximanova-light';
+    src: url(proximanova-light.otf) format("opentype");
+}
