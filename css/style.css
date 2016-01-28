@@ -27,15 +27,17 @@ ul {
 /* HEADER BEGIN*/
 
 .header {
-	width: 100%;
-	min-width: 1200px;
+	min-width: 1000px;
 	background-color: #eff3f7;
 	background: #eff3f7 url(../img/line.png) bottom no-repeat;
 	margin-bottom: 39px;
+	padding: 0 20px;
+
 }
 
 .container-header {
-	min-width: 1200px;
+	margin: 0 auto;
+	max-width: 1200px;
 	height: 119px;
 	line-height: 117px;
 }
@@ -71,7 +73,6 @@ ul {
 	vertical-align: middle;
     width: 47px;
     height: 47px;
-
 }
 
 .vk {
@@ -87,46 +88,14 @@ ul {
     background-position: -197px -119px;
 }
 
-.tw {background: url("../img/spritesheet.png") no-repeat;
-    width: 47px;
-    height: 47px;
-    background-position: -140px -119px;
-}
-.tw:hover {background: url("../img/spritesheet.png") no-repeat;
-    width: 47px;
-    height: 47px;
-    background-position: -201px -5px;
-}
-
-.fb {background: url("../img/spritesheet.png") no-repeat;
-    width: 47px;
-    height: 47px;
-    background-position: -114px -5px;
-}
-.fb:hover {background: url("../img/spritesheet.png") no-repeat;
-	width: 47px;
-    height: 47px;
-    background-position: -5px -62px;
-}
-
-.git {background: url("../img/spritesheet.png") no-repeat;
-    width: 47px;
-    height: 47px;
-    background-position: -62px -62px;
-}
-.git:hover {background: url("../img/spritesheet.png") no-repeat;
-    width: 47px;
-    height: 47px;
-    background-position: -119px -62px;
-}
-
 
 /* HEADER END*/
 
 /* MAIN BEGIN*/
 .container {
-	width: 960px;
+	width: 1000px;
 	margin: 0 auto;
+	padding: 0 20px;
 }
 	/*left aside begin*/
 .aside-left {
@@ -141,7 +110,7 @@ ul {
  	overflow: hidden;
  	background: #eff3f7;
  	border-radius: 4px;
- 	margin-bottom: 26px;
+ 	margin-bottom: 28px;
  }
  .navigation .navigation-list {
  	list-style: none;
@@ -149,17 +118,30 @@ ul {
  	padding: 0;
  }
 .navigation .navigation-item {
-	border-top: 2px solid #3ba8c0;
-	margin: 0 10px;
+	position: relative;
 }
-.navigation .navigation-item:first-child {
-	border-top: none;
+
+.navigation .navigation-item:before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  height: 2px;
+  right: 10px;
+  left: 10px;
+  background: #3ba8c0;
 }
+
+.navigation .navigation-item:first-child:before {
+	content: '';
+  	position: absolute;
+  	top: 0px;
+  	height: 0px;
+}
+
 .navigation .navigation-item.current {
 	background: #3ba8c0;
 	margin: 0;
 	border-bottom: none;
-	padding-left: 11px;
 	margin-bottom: -2px;
 }
 .navigation .navigation-item.current .navigation-link {
@@ -172,20 +154,17 @@ ul {
 	font-size: 20px;
 	text-decoration: none;
 	color: #959aa8;
-	margin-left: 16px;
-	padding: 20px 0px;
+	padding: 20px 0px 20px 26px;
 }
 
 .navigation .navigation-link:hover {
 	color: #3ba8c0;
 }
 .navigation .navigation-link:active {
-	color: #3ba8c0;
-	font-size: 18px;
-	padding: 22px 0px;
+	color: #9E1C1C;
 }
 .navigation .navigation-link:focus {
-	color: #3ba8c0;
+	color: #9E1C1C;
 }
 
 /*Контакты*/
@@ -222,14 +201,14 @@ ul {
 	text-decoration: none;
 	color: #ffffff;
 	font-size: 17px;
-	margin-left: 82px;
+	padding-left: 82px;
 }
 .contacts-item-link:hover {
-	border-bottom: 1px solid #FFFFFF;
+	text-decoration: underline;
 }
 
 .contacts-item a:before {
-	content: " ";
+	content: '';
 	float: left;
 }
 
@@ -274,26 +253,21 @@ ul {
 
 }
 .myinfo-header {
-
 	display: inline-block;
-	vertical-align: middle;
-
 	font-family: "fira_sansbook";
 	font-size: 27px;
+
 	font-weight: normal;
 	padding: 0; margin: 0;
 	color:#3ba8c0;
 
-	height: 69px;
-	line-height: 69px;
-
-	padding: 0px 25px 0px 20px;
+	padding: 12px 22px 13px 22px;
 	border-bottom: 2px solid #3ba8c0;
-
+	margin-bottom: 15px;
 }
 
 .myinfo-container{
-	padding: 0px 20px 25px 20px;
+	padding: 0px 20px 20px 20px;
 }
 	/* content end*/
 
@@ -305,8 +279,7 @@ ul {
 
 /* FOOTER BEGIN*/
 .footer {
-	width: 100%;
-	min-width: 1200px;
+	min-width: 1000px;
 	background-color: #eff3f7;
 	height: 80px;
 	margin-top: -80px;
@@ -316,7 +289,11 @@ ul {
 }
 
 .container-footer {
-	padding-top: 23px;
+	max-width: 1200px;
+	min-width: 1000px;
+	padding: 0 20px;
+	margin: 0 auto;
+	padding: 23px 0 0 50px;
 	position: relative;
 }
 
@@ -363,4 +340,119 @@ ul {
 
 .clearfix:after {
     clear: both;
+}
+
+
+.sprite {
+    background-image: url('../img/spritesheet.png');
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-addproject {
+    width: 32px;
+    height: 32px;
+    background-position: -5px -5px;
+}
+
+.sprite-course {
+    width: 26px;
+    height: 32px;
+    background-position: -47px -5px;
+}
+
+.sprite-email {
+    width: 21px;
+    height: 16px;
+    background-position: -83px -5px;
+}
+
+.sprite-fb {
+    width: 47px;
+    height: 47px;
+    background-position: -114px -5px;
+}
+
+.sprite-fbhover {
+    width: 47px;
+    height: 47px;
+    background-position: -171px -5px;
+}
+
+.sprite-git {
+    width: 47px;
+    height: 47px;
+    background-position: -228px -5px;
+}
+
+.sprite-git:hover {
+    width: 47px;
+    height: 47px;
+    background-position: -285px -5px;
+}
+
+.sprite-lockclose {
+    width: 20px;
+    height: 32px;
+    background-position: -342px -5px;
+}
+
+.sprite-lockopen {
+    width: 20px;
+    height: 32px;
+    background-position: -372px -5px;
+}
+
+.sprite-phone {
+    width: 19px;
+    height: 20px;
+    background-position: -402px -5px;
+}
+
+.sprite-rabota {
+    width: 36px;
+    height: 34px;
+    background-position: -431px -5px;
+}
+
+.sprite-skillbg {
+    width: 9px;
+    height: 19px;
+    background-position: -477px -5px;
+}
+
+.sprite-skype {
+    width: 20px;
+    height: 20px;
+    background-position: -496px -5px;
+}
+
+.sprite-tw {
+    width: 47px;
+    height: 47px;
+    background-position: -526px -5px;
+}
+
+.sprite-tw:hover {
+    width: 47px;
+    height: 47px;
+    background-position: -583px -5px;
+}
+
+.sprite-vk {
+    width: 47px;
+    height: 47px;
+    background-position: -640px -5px;
+}
+
+.sprite-vk:hover {
+    width: 47px;
+    height: 47px;
+    background-position: -697px -5px;
+}
+
+.sprite-vuz {
+    width: 41px;
+    height: 23px;
+    background-position: -754px -5px;
 }

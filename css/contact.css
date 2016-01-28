@@ -115,11 +115,12 @@
 .leadmessage .text {
 	padding-top: 10px;
 	height: 184px;
+	resize: none;
 }
 .capture {
 	display: block;
 	float: left;
-	margin: 0px;
+	margin-bottom: 20px;
 	height: 80px;
 	width: 180px;
 	color: #48cbe8;

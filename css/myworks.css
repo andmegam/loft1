@@ -1,7 +1,7 @@
 
 .works {
-	display: block;
 	padding: 0px;
+	margin-top: 11px;
 }
 
 .project {
@@ -9,7 +9,7 @@
 	vertical-align: top;
 	width: 183px;
 	text-align: center;
-	margin: 30px 15px 5px 15px;
+	margin: 0px 15px 5px 15px;
 }
 .hover-img {
 	height: 127px;
