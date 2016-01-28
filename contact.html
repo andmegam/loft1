@@ -1,56 +1,60 @@
 <!DOCTYPE html>
 <html lang="ru-RU">
 <head>
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=1230, initial-scale=1" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=1230, initial-scale=1" />
 
-<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
 
+	<title>Машков Андрей | Обо мне</title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
 
-<title>Машков Андрей | Обо мне</title>
-<meta name="description" content="" />
-<meta name="keywords" content="" />
-<meta name="author" content="" />
+	<link rel="stylesheet" href="css/normalize.css" type="text/css"/>
+	<link rel="stylesheet" href="css/style.css" type="text/css"/>
+	<link rel="stylesheet" href="css/contact.css" type="text/css"/>
 
-
-<link rel="stylesheet" href="css/normalize.css" type="text/css"/>
-<link rel="stylesheet" href="css/style.css" type="text/css"/>
-<link rel="stylesheet" href="css/contact.css" type="text/css"/>
-
-<!--[if lt IE 9]>
-<script src="http://html5shiv-printshiv.googlecode.com/svn/trunk/html5shiv-printshiv.js"></script>
-<![endif]-->
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv-printshiv.googlecode.com/svn/trunk/html5shiv-printshiv.js"></script>
+	<![endif]-->
 
 </head>
 <body class="body">
 	<div class="wrapper">
 		<header class="header">
 			<div class="container-header clearfix">
-				<a class="logo" href="http://loftschool.com/">
-					<img src="img/logo.png" alt="Логотип LoftSchool" title="Логотип LoftSchool"/>
-					<span class="logo-text">LoftDchool. От мыслителя к создателю</span>
+				<a class="logo" href="http://mashkovpro.ru/loft1/">
+					<img src="img/logo.png" alt="Портфолио" title="Портфолио Машкова Андрея"/>
+					<span class="logo-text">Портфолио Машкова Андрея</span>
 				</a>
 
 				<ul class="socials clearfix">
 					<li class="socials-item">
-						<a class="socials-item-link vk" href="https://vk.com/a_mashkov" target="_blank">vkontakte</a>
+						<a class="socials-item-link" href="https://vk.com/a_mashkov" target="_blank">
+							<i class="sprite sprite-vk">vkontakte</i>
+						</a>
 					</li>
 					<li class="socials-item">
-						<a class="socials-item-link tw" href="#">twitter</a>
+						<a class="socials-item-link tw" href="#">
+							<i class="sprite sprite-tw">twitter</i>
+						</a>
 					</li>
 					<li class="socials-item">
-						<a class="socials-item-link fb" href="#">facebook</a>
+						<a class="socials-item-link fb" href="#">
+							<i class="sprite sprite-fb">facebook</i>
+						</a>
 					</li>
 					<li class="socials-item">
-						<a class="socials-item-link git" href="https://github.com/andmegam/" target="_blank">github</a>
+						<a class="socials-item-link git" href="https://github.com/andmegam/" target="_blank">
+							<i class="sprite sprite-git">github</i>
+						</a>
 					</li>
 				</ul>
 			</div>
 		</header>
-
-
 
 		<main class="container clearfix">
 			<aside class="aside-left">
@@ -68,7 +72,6 @@
 						</li>
 					</ul>
 				</nav>
-
 
 				<div class="contacts-header">Контакты</div>
 				<ul class="contacts">
@@ -89,31 +92,36 @@
 					<h1 class="mycontact-header">У вас интересный проект? Напишите мне</h1>
 					<form class="contact-form" method="post" name="contacts_form">
 						<div class="row-top clearfix">
-							<label class="leadname field-text">Имя
-								<input id="leadname" class="text" type="text" placeholder="Как к вам обращаться">
-							</label>
-							<label class="leademail field-text">Email
-								<input id="leademail" class="text" type="text" placeholder="Куда мне писать">
-							</label>
+							<label class="leadname field-text">
+								Имя
+								<input id="leadname" class="text" type="text" placeholder="Как к вам обращаться"></label>
+							<label class="leademail field-text">
+								Email
+								<input id="leademail" class="text" type="text" placeholder="Куда мне писать"></label>
 						</div>
 
-						<label class="leadmessage field-text clearfix">Сообщение
+						<label class="leadmessage field-text clearfix">
+							Сообщение
 							<textarea id="leadmessage" class="text" placeholder="Кратко в чем суть"></textarea>
 						</label>
 
-					<label class="leadcapture field-text clearfix">Введите код, указанный на картинке
-						<div class="capture">
-							<img src="php/captcha.php" alt="capturecode" />
+						<label class="leadcapture field-text clearfix"  for="leadcapture">
+							Введите код, указанный на картинке
+						</label>
+						<div class="clearfix">
+							<div class="capture">
+								<img src="php/captcha.php" alt="capturecode" />
+							</div>
+							<div class="capture-code">
+								<input id="leadcapture" class="capture-code-text" type="text" placeholder="Введите код">
+							</div>
 						</div>
-						<div class="capture-code">
-							<input id="capture" class="capture-code-text" type="text" placeholder="Введите код">
+
+						<div class="buttons clearfix">
+							<button class="button button-send" type="submit" value="submit">Отправить</button>
+							<button class="button button-clear" type="reset" value="clear">Очистить</button>
 						</div>
-					</label>
-					<div class="buttons clearfix">
-						<button class="button button-send" type="submit" value="submit">Отправить</button>
-						<button class="button button-clear" type="reset" value="clear">Очистить</button>
-					</div>
-				</form>
+					</form>
 				</article>
 			</section>
 		</main>
@@ -125,8 +133,8 @@
 			<div class="lock">
 				<a href="login.php" class="lock-inner" target="_blank">Войти</a>
 			</div>
-			<div class="copyright">&copy; 2016 Это мой сайт, пожалуйста, не копируйте и не воруйте его.
-
+			<div class="copyright">
+				&copy; 2016 Это мой сайт, пожалуйста, не копируйте и не воруйте его.
 			</div>
 
 		</div>
@@ -134,9 +142,7 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/jquery-1.9.0.min.js"><\/script>');</script>
-	<script src="js/main.js"></script>
-
+<script src="js/main.js"></script>
 
 </body>
 </html>
-
