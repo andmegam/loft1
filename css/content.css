@@ -52,7 +52,7 @@
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
-	background: url("../img/skillbg.png") center center repeat-x  ;
+	background: url("../img/skillbg.png") center center repeat-x ;
 	font-size: 14px;
 }
 .row {
@@ -80,7 +80,7 @@
 	float: left;
     min-width: 50px;
 	min-height: 50px;
-	background: url("../img/course.png")  center center no-repeat;
+	background-image: url("../img/course.png") no-repeat;
 }
 
 .row-first {

@@ -58,36 +58,70 @@ ul {
 
 .socials {
 	float: right;
-	font-size: 0;
+	font-size: 0px;
 }
 
 .socials-item {
 	float: left;
 	padding-left: 24px;
 }
+
 .socials-item:first-child{
 	padding-left: 0px;
 }
-.socials-item-link {
+
+.icon {
 	display: inline-block;
-	vertical-align: middle;
-    width: 47px;
-    height: 47px;
-}
-
-.vk {
 	background: url("../img/spritesheet.png") no-repeat;
-	width: 47px;
-    height: 47px;
-    background-position: -195px -62px;
+	vertical-align: middle;
 }
-
-.vk:hover {background: url("../img/spritesheet.png") no-repeat;
+.sprite-vk {
     width: 47px;
     height: 47px;
-    background-position: -197px -119px;
+    background-position: -640px -5px;
 }
 
+.sprite-vk:hover {
+    width: 47px;
+    height: 47px;
+    background-position: -697px -5px;
+}
+
+.sprite-tw {
+    width: 47px;
+    height: 47px;
+    background-position: -526px -5px;
+}
+
+.sprite-tw:hover {
+    width: 47px;
+    height: 47px;
+    background-position: -583px -5px;
+}
+
+.sprite-fb {
+    width: 47px;
+    height: 47px;
+    background-position: -114px -5px;
+}
+
+.sprite-fbhover {
+    width: 47px;
+    height: 47px;
+    background-position: -171px -5px;
+}
+
+.sprite-git {
+    width: 47px;
+    height: 47px;
+    background-position: -228px -5px;
+}
+
+.sprite-git:hover {
+    width: 47px;
+    height: 47px;
+    background-position: -285px -5px;
+}
 
 /* HEADER END*/
 
@@ -346,13 +380,7 @@ ul {
 .sprite {
     background-image: url('../img/spritesheet.png');
     background-repeat: no-repeat;
-    display: block;
-}
-
-.sprite-addproject {
-    width: 32px;
-    height: 32px;
-    background-position: -5px -5px;
+    display: inline-block;
 }
 
 .sprite-course {
@@ -367,29 +395,7 @@ ul {
     background-position: -83px -5px;
 }
 
-.sprite-fb {
-    width: 47px;
-    height: 47px;
-    background-position: -114px -5px;
-}
 
-.sprite-fbhover {
-    width: 47px;
-    height: 47px;
-    background-position: -171px -5px;
-}
-
-.sprite-git {
-    width: 47px;
-    height: 47px;
-    background-position: -228px -5px;
-}
-
-.sprite-git:hover {
-    width: 47px;
-    height: 47px;
-    background-position: -285px -5px;
-}
 
 .sprite-lockclose {
     width: 20px;
@@ -427,29 +433,8 @@ ul {
     background-position: -496px -5px;
 }
 
-.sprite-tw {
-    width: 47px;
-    height: 47px;
-    background-position: -526px -5px;
-}
 
-.sprite-tw:hover {
-    width: 47px;
-    height: 47px;
-    background-position: -583px -5px;
-}
 
-.sprite-vk {
-    width: 47px;
-    height: 47px;
-    background-position: -640px -5px;
-}
-
-.sprite-vk:hover {
-    width: 47px;
-    height: 47px;
-    background-position: -697px -5px;
-}
 
 .sprite-vuz {
     width: 41px;

@@ -1,0 +1,307 @@
+/* POPUP BEGIN*/
+.blackout {
+	z-index:3;
+	position:fixed;
+	background-color:#000;
+	opacity:0.8;
+	-moz-opacity:0.8;
+	filter:alpha(opacity=80);
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	cursor:pointer;
+	display:none;
+	font-size: 0px;
+}
+
+
+::-moz-placeholder {
+    color: #48cbe8;
+}
+
+::-webkit-input-placeholder {
+    color: #48cbe8;
+}
+
+.popup {
+	position: absolute;
+	display: block;
+	top: -3000px;
+	margin: 0 auto;
+	width: 362px;
+	border-radius: 5px;
+	-webkit-border-radius: 4px/7px;
+	-moz-border-radius: 4px/7px;
+	border-radius: 4px/7px;
+	background-color: #eff3f7;
+	-webkit-box-shadow: 0 6px 12px 1px rgba(13,16,7,.35);
+	-moz-box-shadow: 0 6px 12px 1px rgba(13,16,7,.35);
+	box-shadow: 0 6px 12px 1px rgba(13,16,7,.35);
+	z-index: 5;
+}
+
+.popup-header {
+	height: 55px;
+	background: #48cbe8;
+	border-bottom: 9px solid #67dffa;
+	padding: 15px 15px 40px 15px;
+}
+.popup-header .text {
+	float: left;
+	font-family: 'fira_sansbook';
+	font-size: 25px;
+	line-height: 1.2;
+	color: #FFFFFF;
+}
+.popup-header .close {
+	float: right;
+}
+.close .close-img {
+	cursor: pointer;
+	font-size: 0px;
+	width: 25px;
+	height: 25px;
+	background: url("../img/close.png")  center center no-repeat;
+	z-index: 100;
+}
+.popup-body {
+	padding: 10px 22px 22px 22px;
+}
+
+
+/*POPUP END*/
+
+/* Contacts_form BEGIN*/
+
+.label-text {
+  display: block;
+  font-size: 19px;
+  font-family: "fira_sanslight";
+  color: rgb(149, 154, 168);
+  line-height: 1.2;
+
+}
+
+.input-text, .label-unload-file, .textarea-text {
+	width: 100%;
+    font-size: 13px;
+    padding: 10px;
+    border: 1px solid #48cbe8;
+    height: 40px;
+    border-radius: 4px;
+    color: #48cbe8;
+    margin-bottom: 15px;
+	background-color: #FFF;
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
+ .input-text, .textarea-text {outline: 0 !important;}
+
+.input-text::-webkit-input-placeholder       {line-height: 20px;  transition: line-height 0.5s ease;}
+.input-text::-moz-placeholder                {line-height: 20px;  transition: line-height 0.5s ease;}
+.input-text:-moz-placeholder                 {line-height: 20px;  transition: line-height 0.5s ease;}
+.input-text:-ms-input-placeholder            {line-height: 20px;  transition: line-height 0.5s ease;}
+.input-text:focus::-webkit-input-placeholder {line-height: 100px; transition: line-height 0.5s ease;}
+.input-text:focus::-moz-placeholder          {line-height: 100px; transition: line-height 0.5s ease;}
+.input-text:focus:-moz-placeholder           {line-height: 100px; transition: line-height 0.5s ease;}
+.input-text:focus:-ms-input-placeholder      {line-height: 100px; transition: line-height 0.5s ease;}
+
+
+.textarea-text::-webkit-input-placeholder       {text-indent: 0px;   transition: text-indent 0.5s ease;}
+.textarea-text:-moz-placeholder                {text-indent: 0px;   transition: text-indent 0.5s ease;}
+.textarea-text:-moz-placeholder                 {text-indent: 0px;   transition: text-indent 0.5s ease;}
+.textarea-text:-ms-input-placeholder            {text-indent: 0px;   transition: text-indent 0.5s ease;}
+.textarea-text:focus::-webkit-input-placeholder {text-indent: -500px; transition: text-indent 0.5s ease;}
+.textarea-text:focus:-moz-placeholder          {text-indent: -500px; transition: text-indent 0.5s ease;}
+.textarea-text:focus:-moz-placeholder           {text-indent: -500px; transition: text-indent 0.5s ease;}
+.textarea-text:focus:-ms-input-placeholder      {text-indent: -500px; transition: text-indent 0.5s ease;}
+
+
+.error {
+	border: 1px solid #F97E76;
+	background-color: #fad2d1;
+}
+
+.textarea-text {
+	height: 110px;
+	resize: none;
+}
+
+.label-unload-file-img {
+	position: absolute;
+	top:0;
+	right: 0;
+	float: right;
+	font-size: 0px;
+	display: block;
+	width: 50px;
+	height: 40px;
+	background: #48cbe8 url("../img/upload.png") center center no-repeat;
+	cursor: pointer;
+}
+
+.unload-file {
+	position: absolute;
+	top: 10px;
+	left:10px;
+	z-index: -1;
+	font-size: 0;
+}
+
+.row-top {
+	margin-bottom: 10px;
+}
+.leadname {
+	width: 190px;
+	float: left;
+}
+.leademail {
+	width: 190px;
+	float: right;
+}
+.leadmessage .textarea-text{
+	width: 400px;
+	height: 184px;
+}
+
+.leadcapture {
+	width: 100%;
+	margin-bottom: 17px;
+}
+
+.capture_img {
+	display: block;
+	float: left;
+	margin-bottom: 20px;
+	height: 80px;
+	width: 180px;
+	color: #48cbe8;
+	font-size: 13px;
+	border: 1px solid #48cbe8;
+	border-radius: 4px;
+	overflow: hidden;
+}
+.capture-code {
+	float: right;
+	margin-top: 20px;
+	width: 190px;
+}
+
+
+.span-center {
+	display: block;
+	height: 40px;
+	text-align: center;
+}
+
+.button {
+	font-family: 'fira_sansbook';
+	font-size: 19px;
+	color: white;
+	width: 135px;
+	outline: 0 !important;
+
+	border-radius: 4px;
+	-webkit-box-shadow: 0px 2px 1px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    0px 2px 1px rgba(50, 50, 50, 0.75);
+	box-shadow:         0px 2px 1px rgba(50, 50, 50, 0.75);
+}
+
+.button:hover {
+	padding-top: 3px;
+	font-size: 16px;
+}
+
+
+.button-send, .button-add {
+	background-color: #48cbe8;
+	border: 1px solid #41b9d4;
+}
+.button-send {
+	float: left;
+}
+
+.button-clear {
+	float: right;
+	background-color: #849db5;
+	border: 1px solid #849db5;
+}
+
+
+.button-clear:active {
+	padding-top: 5px;
+	font-size: 16px;
+ 	-webkit-box-shadow:0px 2px 5px #58697a, inset 0px 2px 0px #58697a;
+	-moz-box-shadow: 0px 2px 5px #58697a,  inset 0px 2px 0px #58697a;
+ 	box-shadow:0px 2px 5px #58697a, inset 0px 2px 0px #58697a;
+}
+
+.button-send:active {
+	padding-top: 5px;
+	font-size: 16px;
+ 	-webkit-box-shadow:0px 2px 5px #3ba8c0, inset 0px 2px 0px #3ba8c0;
+	-moz-box-shadow: 0px 2px 5px #3ba8c0,  inset 0px 2px 0px #3ba8c0;
+ 	box-shadow:0px 2px 5px #3ba8c0, inset 0px 2px 0px #3ba8c0;
+}
+
+
+/* Contacts_form END*/
+
+/* Tooltip BEGIN*/
+.form__item {
+  position: relative;
+  display: block;
+}
+.tooltipstext {
+  position: absolute;
+  display: none;
+  top: 20px;
+  width:auto;
+  white-space: nowrap;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-family: fira_sansbook;
+  background: #F97E76;
+  height: 25px;
+  line-height: 25px;
+  padding: 0px 5px;
+  text-align: center;
+  border-radius: 3px;
+  z-index: 9999;
+}
+.posleft {
+  right: 100%;
+  margin: 7px 5px 0px 0px;
+}
+
+.posleft:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  width: 0; height: 0;
+  border-left: 5px solid #F97E76;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.posright {
+  left: 100%;
+  margin: 7px 0px 0px 5px;
+}
+
+.posright:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  width: 0; height: 0;
+  border-right: 5px solid #F97E76;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+/* Tooltip END*/

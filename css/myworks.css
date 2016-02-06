@@ -82,18 +82,18 @@
 	text-align: center;
 	background-color: #edf8fc;
 }
-.project.newproject:after {
+
+.sprite-addproject {
 	position: absolute;
-	content: ' ';
-	background: url('../img/spritesheet.png')  center center  no-repeat;
-	left:70px;
-	top: 35px;
-	width: 32px;
+	top : 40px;
+	left : 70px;
+    width: 32px;
     height: 32px;
+    font-size: 0;
     background-position: -5px -5px;
 }
 
-a.addproject {
+.addproject {
 	position: absolute;
 	padding-top: 80px;
 	left:0;
@@ -106,5 +106,5 @@ a.addproject {
 }
 
 .project.newproject:hover {
-	background-color: white;
+	background-color: #FFF;
 }
