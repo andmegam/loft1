@@ -1,5 +1,5 @@
 
-.contact-form {
+.contact_form {
 	margin: auto;
 	width: 400px;
 }
@@ -16,10 +16,10 @@
  /*overflow: hidden;*/
 }
 
-.mycontact-header {
+.mycontact_header {
 	height: 139px;
 	margin: 0px;
-	margin-bottom: 40px;
+	margin-bottom: 15px;
 	padding: 0px;
 	background: #48cbe8;
 	line-height: 122px;

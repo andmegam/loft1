@@ -4,9 +4,8 @@ var nav = (function () {
 		currentpage = location.pathname.match(/[^/]*$/);
 
 	if (navelements.length>0 ) {
-        for(var i = 0, len = navelements.length;  i
-<len; i++) {
-
+        for(var i = 0, len = navelements.length;  i<len; i++)
+        {
 			if (currentpage[0] === "" ) {
 				currentpage = "index.html";
 			}
@@ -21,27 +20,24 @@ var nav = (function () {
 
 var appForm = (function(){
 	var my,
-	$form = $('.form'),
-	urlHandlerAjax = $form.attr('action');
+	$form = $('.form');
 
 
 	init();
 	attachEvents();
 
 	function init() {
-
 		// Установка PopUp по центру
 		$form.css({left:getPopUpLeft()});
-		// console.log(urlHandlerAjax);
-
 	}
 
 	function attachEvents() {
 		$('#link_popup_show').on('click', onPopupShow);
 		$('#blackout, #icon_popup_close').on('click', onPopupHide);
-		$('.input-text, .textarea-text').on('keypress', onToolTipHide)
-		$('#unload-file').on('change', onChangeFile);
+		$('.input_text, .textarea_text').on('keypress', onToolTipHide)
+		$('#unload_file').on('change', onChangeFile);
 		$form.on('submit', onCheckForm);
+		$form.on('reset', onClearForm);
 	}
 
 	// Центр PopUp
@@ -67,7 +63,7 @@ var appForm = (function(){
 	}
 
 	// Выбор загружаемого файла
-	function onChangeFile (e){
+	function onChangeFile (element){
 		var $this = $(this),
 			paht_file = $this.val().replace(/.+[\\\/]/, "");
 
@@ -80,18 +76,23 @@ var appForm = (function(){
 	}
 
 	// Удаление ToolTip при наборе текста
-	function onToolTipHide (e) {
+	function onToolTipHide (element) {
 		var $this = $(this);
 		controlForm.delToolTip($this);
 	}
 
 	// Проверка валидации и отправка данных на сервер
-	function onCheckForm (e){
-		e.preventDefault();
+	function onCheckForm (form){
+		form.preventDefault();
 
-		if(controlForm.validForm($form)) {
-			controlForm.sendAjax($form, urlHandlerAjax);
+		if(controlForm.validForm($(this))) {
+			controlForm.sendAjax($(this));
 		}
+	}
+
+	// Очистка формы по кнопке
+	function onClearForm (form){
+		controlForm.clearForm($(this));
 	}
 
   return window.AppForm = my;
@@ -107,7 +108,7 @@ var controlForm = (function() {
   	// Отображение ToolTip
 	function addToolTipError ($element) {
 		var $tooltip = $element.closest('.form__item').find('.tooltipstext'),
-			labeltext = $element.closest('.form__item').find('.label-text').text();
+			labeltext = $element.closest('.form__item').find('.label_text').text();
 
 		$tooltip.text('Заполните поле "' + labeltext + '"') ;
 
@@ -115,7 +116,7 @@ var controlForm = (function() {
 			if ($element.attr('type') !== 'file') {
 				$element.addClass('error');
 			}else {
-				$('.label-unload-file').addClass('error');
+				$('.label_unload_file').addClass('error');
 			}
 		});
 	}
@@ -128,28 +129,35 @@ var controlForm = (function() {
 			if ($element.attr('type') !== 'file') {
 					$element.removeClass('error');
 			}else {
-				$('.label-unload-file').removeClass('error');
+				$('.label_unload_file').removeClass('error');
 			}
 		});
 	}
 
-	// Сборка всех параметров формы, включая имена файлов
-	function mySerialize (form) {
-		var list_param = form.serialize(),
-			file_elements = form.find('input[type=file]'),
-			param_name = '',
-			param_val = '';
+	function createStatusServer ($form, jsondata) {
+		var status = jsondata['status'],
+			status_text = jsondata['status_text'],
+			$sever_mess = $form.find('.sever_mess');
 
-		file_elements.each(function(index){
+		if (status === 'server_before') {
+			$sever_mess.removeClass('server_error server_ok');
+			$sever_mess.addClass('server_before');
+			$sever_mess.find('.server_mess_title').text('Одну минуточку...');
+		}
 
-			param_name = $(this).attr('name');
-			param_val = $(this).val().replace(/.+[\\\/]/, "");
+		if (status === 'server_error' ) {
+			$sever_mess.removeClass('server_ok');
+			$sever_mess.addClass('server_error');
+			$sever_mess.find('.server_mess_title').text('Ошибка!');
+		}
 
-			list_param += '&' + encodeURIComponent(param_name) + '=' + encodeURIComponent(param_val);
+		if (status === 'server_ok') {
+			$sever_mess.removeClass('server_error');
+			$sever_mess.addClass('server_ok');
+			$sever_mess.find('.server_mess_title').text('Спасибо!');
+		}
 
-		});
-
-		return list_param;
+		$sever_mess.find('.server_mess_desc').text(status_text);
 	}
 
 	function publicInterface() {
@@ -173,172 +181,46 @@ var controlForm = (function() {
 							delToolTipError($element);
 						},
 
-			clearForm:  function (form) {
+			clearForm:  function ($form) {
 
-							form.find("input, textarea").each(function(e) {
+							$form.find("input, textarea").each(function(e) {
 								var $this = $(this);
 
 									$this.val('');
 									$('.unload_paht_file').text('Загрузите изображение');
 									delToolTipError($this);
 							});
+
+							$form.find('.sever_mess').removeClass('server_error server_ok');
 						},
 
-			sendAjax: 	function(form, urlhandlerajax){
-							var dataparam = mySerialize(form);
+			sendAjax: 	function($form){
+						   var data = new FormData($form.get(0)),
+						   urlHandlerAjax = $form.attr('action');
 
-							console.log(dataparam, urlhandlerajax );
+							$.ajax({
+							  url: urlHandlerAjax,
+							  type: 'post',
+							  data: data,
+							  dataType: 'json',
+						      contentType: false, // важно - убираем форматирование данных по умолчанию
+						      processData: false, // важно - убираем преобразование строк по умолчанию
+						      beforeSend: function() {
+								var jsondata = {'status':'server_before', 'status_text':'Подождите ответ от сервера.'};
+								createStatusServer ($form, jsondata);
+						      },
+							  success: function(jsondata){
+							  	createStatusServer ($form, jsondata);
+							  },
+							  error : function(error) {
+							  	var jsondata = {'status':'server_error', 'status_text':'Ошибка сервера'};
+								createStatusServer ($form, jsondata);
+							  }
 
+							});
 						}
 		};
 	}
 
 	return window.validationForm = my;
 })();
-
-
-/*
-function ssdsd (){
-
-	var Win 			= $(window),
-		Fon         	= $('#blackout'),
-		PopupForm 		= $('#popup_form'),
-		LinkPopupShow 	= $('#link_popup_show'),
-		IconPpopupClose = $('#icon_popup_close'),
-		UnloadFileInput	= $('#unload-file'),
-		ProjectPahtFile	= $('.unload_paht_file'),
-		ProjectName		= $('#project-name'),
-		ProjectUrl		= $('#project-url'),
-		ProjectDesc		= $('#project-desc'),
-		BtnAddProject	= $('#button-add');
-
-   // Отображение PopUp
-	LinkPopupShow.on('click', function(){
-		var scrollTop = $(window).scrollTop();
-		Fon.fadeIn(500);
-		PopupForm.animate({top: scrollTop + 80 + 'px', left: getPopUpLeft() + 'px'}, 500);
-    });
-
-	// Скрытие PopUp
-    var hideModalForm = function(){
-		Fon.fadeOut(500);
-    	PopupForm.animate({top: '-3000px'}, 500);
-	};
-
-	// Центр PopUp
-	var getPopUpLeft = function(){
-		var winWidth = Win.width(),
-			popupWidth = PopupForm.width(),
-			popupleft = (winWidth - popupWidth) / 2;
-		return popupleft;
-	};
-
-
-	// Валидация формы
-	var formValidation = function(){
-		var	departure = true;
-
-		if (ProjectName.val() === "") {
-			addError(ProjectName, "Введите название проекта");
-			departure = false;
-		}
-
-		if (UnloadFileInput.val() === "") {
-			addError(UnloadFileInput, "Загрузите изображение проекта");
-			departure = false;
-		}
-
-		if (ProjectUrl.val() === "") {
-			addError(ProjectUrl, "Укажите ссылку на проект");
-			departure = false;
-		}
-
-		if (ProjectDesc.val() === "") {
-			addError(ProjectDesc, "Введите описание проекта");
-			departure = false;
-		}
-
-		return departure;
-	};
-
-	// Отображение ToolTip. Подсветка незаполненного поля
-	var addError = function(obj, error_text){
-
-		var toltip_error = obj.parent().find('.tooltipstext');
-
-			toltip_error.fadeIn(100, function(){
-				toltip_error.html(error_text);
-			});
-
-			if (obj.attr('id') !== 'unload-file') {
-				obj.addClass('error');
-			}else {
-				$('.label-unload-file').addClass('error');
-			}
-	};
-
-	// Скрытие ToolTip при заполнении поля
-	var removeError = function(obj) {
-
-		var toltip_error = obj.parent().find('.tooltipstext');
-
-		toltip_error.fadeOut(100, function(){
-			toltip_error.html('');
-		});
-
-		if (obj.attr('id') !== 'unload-file') {
-			obj.removeClass('error');
-		}else {
-			$('.label-unload-file').removeClass('error');
-		}
-	}
-
-	// Изменение содержимого текстовых полей
-	$('.input-text, .textarea-text').on('keypress', function(e){
-		var $this = $(this);
-		removeError($this);
-	});
-
-	// При открытии диалогового окна
-	$('#unload-file').on('focus', function(e){
-		var $this = $(this);
-		removeError($this);
-	});
-
-	// Установка PopUp по центру
-	PopupForm.css({left:getPopUpLeft()});
-
-
-
-	// Скрытие PopUp "клик по подложке"
-	Fon.on('click', function(){
-    	hideModalForm();
-    });
-
-	// Скрытие PopUp "крестиком"
-   	IconPpopupClose.on('click', function(){
-    	hideModalForm();
-    });
-
-   	// Выбор загружаемого файла
-	UnloadFileInput.on('change', function(e){
-		var paht_file = this.value;
-		if (paht_file.length>
-	0) {
-			ProjectPahtFile.text(this.value);
-		}
-	});
-
-	// Кнопка "Добавить"
-   	BtnAddProject.on('click', function(e){
-   		e.preventDefault();
-
-   		if (formValidation()) {
-   			alert('Валидация прошла успешно');
-   		}else {
-   			alert('хрен там');
-   		}
-    	// alert(ProjectName.val());
-    });
-};
-*/

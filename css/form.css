@@ -41,23 +41,23 @@
 	z-index: 5;
 }
 
-.popup-header {
+.popup_header {
 	height: 55px;
 	background: #48cbe8;
 	border-bottom: 9px solid #67dffa;
 	padding: 15px 15px 40px 15px;
 }
-.popup-header .text {
+.popup_header .text {
 	float: left;
 	font-family: 'fira_sansbook';
 	font-size: 25px;
 	line-height: 1.2;
 	color: #FFFFFF;
 }
-.popup-header .close {
+.popup_header .close {
 	float: right;
 }
-.close .close-img {
+.close .close_img {
 	cursor: pointer;
 	font-size: 0px;
 	width: 25px;
@@ -65,7 +65,7 @@
 	background: url("../img/close.png")  center center no-repeat;
 	z-index: 100;
 }
-.popup-body {
+.popup_body {
 	padding: 10px 22px 22px 22px;
 }
 
@@ -74,7 +74,7 @@
 
 /* Contacts_form BEGIN*/
 
-.label-text {
+.label_text {
   display: block;
   font-size: 19px;
   font-family: "fira_sanslight";
@@ -83,7 +83,7 @@
 
 }
 
-.input-text, .label-unload-file, .textarea-text {
+.input_text, .label_unload_file, .textarea_text {
 	width: 100%;
     font-size: 13px;
     padding: 10px;
@@ -97,39 +97,73 @@
 	position: relative;
 	overflow: hidden;
 }
- .input-text, .textarea-text {outline: 0 !important;}
+ .input_text, .textarea_text {outline: 0 !important;}
 
-.input-text::-webkit-input-placeholder       {line-height: 20px;  transition: line-height 0.5s ease;}
-.input-text::-moz-placeholder                {line-height: 20px;  transition: line-height 0.5s ease;}
-.input-text:-moz-placeholder                 {line-height: 20px;  transition: line-height 0.5s ease;}
-.input-text:-ms-input-placeholder            {line-height: 20px;  transition: line-height 0.5s ease;}
-.input-text:focus::-webkit-input-placeholder {line-height: 100px; transition: line-height 0.5s ease;}
-.input-text:focus::-moz-placeholder          {line-height: 100px; transition: line-height 0.5s ease;}
-.input-text:focus:-moz-placeholder           {line-height: 100px; transition: line-height 0.5s ease;}
-.input-text:focus:-ms-input-placeholder      {line-height: 100px; transition: line-height 0.5s ease;}
+.input_text::-webkit-input-placeholder       {line-height: 20px;  transition: line-height 0.5s ease;}
+.input_text::-moz-placeholder                {line-height: 20px;  transition: line-height 0.5s ease;}
+.input_text:-moz-placeholder                 {line-height: 20px;  transition: line-height 0.5s ease;}
+.input_text:-ms-input-placeholder            {line-height: 20px;  transition: line-height 0.5s ease;}
+.input_text:focus::-webkit-input-placeholder {line-height: 100px; transition: line-height 0.5s ease;}
+.input_text:focus::-moz-placeholder          {line-height: 100px; transition: line-height 0.5s ease;}
+.input_text:focus:-moz-placeholder           {line-height: 100px; transition: line-height 0.5s ease;}
+.input_text:focus:-ms-input-placeholder      {line-height: 100px; transition: line-height 0.5s ease;}
 
 
-.textarea-text::-webkit-input-placeholder       {text-indent: 0px;   transition: text-indent 0.5s ease;}
-.textarea-text:-moz-placeholder                {text-indent: 0px;   transition: text-indent 0.5s ease;}
-.textarea-text:-moz-placeholder                 {text-indent: 0px;   transition: text-indent 0.5s ease;}
-.textarea-text:-ms-input-placeholder            {text-indent: 0px;   transition: text-indent 0.5s ease;}
-.textarea-text:focus::-webkit-input-placeholder {text-indent: -500px; transition: text-indent 0.5s ease;}
-.textarea-text:focus:-moz-placeholder          {text-indent: -500px; transition: text-indent 0.5s ease;}
-.textarea-text:focus:-moz-placeholder           {text-indent: -500px; transition: text-indent 0.5s ease;}
-.textarea-text:focus:-ms-input-placeholder      {text-indent: -500px; transition: text-indent 0.5s ease;}
+.textarea_text::-webkit-input-placeholder       {text-indent: 0px;   transition: text-indent 0.5s ease;}
+.textarea_text:-moz-placeholder                {text-indent: 0px;   transition: text-indent 0.5s ease;}
+.textarea_text:-moz-placeholder                 {text-indent: 0px;   transition: text-indent 0.5s ease;}
+.textarea_text:-ms-input-placeholder            {text-indent: 0px;   transition: text-indent 0.5s ease;}
+.textarea_text:focus::-webkit-input-placeholder {text-indent: -500px; transition: text-indent 0.5s ease;}
+.textarea_text:focus:-moz-placeholder          {text-indent: -500px; transition: text-indent 0.5s ease;}
+.textarea_text:focus:-moz-placeholder           {text-indent: -500px; transition: text-indent 0.5s ease;}
+.textarea_text:focus:-ms-input-placeholder      {text-indent: -500px; transition: text-indent 0.5s ease;}
 
+.sever_mess {
+	display: none;
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 15px;
+	font-family: 'fira_sansbook';
+	line-height: 1.2;
+}
+.server_before {
+	display: block;
+  	color: #B8860B;
+	border: 1px solid #B8860B;
+	background-color: #FFD700;
+}
+.server_error {
+	display: block;
+  	color: #F97E76;
+	border: 1px solid #F97E76;
+	background-color: #fad2d1;
+}
+
+.server_ok {
+	display: block;
+  	color: #49bb7b;
+	border: 1px solid #49bb7b;
+	background-color: #c3e9d4;
+}
+
+.server_mess_title {
+	font-size: 25px;
+}
+.server_mess_desc {
+	font-size: 15px;
+}
 
 .error {
 	border: 1px solid #F97E76;
 	background-color: #fad2d1;
 }
 
-.textarea-text {
+.textarea_text {
 	height: 110px;
 	resize: none;
 }
 
-.label-unload-file-img {
+.label_unload_file_img {
 	position: absolute;
 	top:0;
 	right: 0;
@@ -142,7 +176,7 @@
 	cursor: pointer;
 }
 
-.unload-file {
+.unload_file {
 	position: absolute;
 	top: 10px;
 	left:10px;
@@ -150,7 +184,7 @@
 	font-size: 0;
 }
 
-.row-top {
+.row_top {
 	margin-bottom: 10px;
 }
 .leadname {
@@ -161,7 +195,7 @@
 	width: 190px;
 	float: right;
 }
-.leadmessage .textarea-text{
+.leadmessage .textarea_text{
 	width: 400px;
 	height: 184px;
 }
@@ -183,14 +217,14 @@
 	border-radius: 4px;
 	overflow: hidden;
 }
-.capture-code {
+.capture_code {
 	float: right;
 	margin-top: 20px;
 	width: 190px;
 }
 
 
-.span-center {
+.span_center {
 	display: block;
 	height: 40px;
 	text-align: center;
@@ -215,22 +249,22 @@
 }
 
 
-.button-send, .button-add {
+.button_send, .button_add {
 	background-color: #48cbe8;
 	border: 1px solid #41b9d4;
 }
-.button-send {
+.button_send {
 	float: left;
 }
 
-.button-clear {
+.button_clear {
 	float: right;
 	background-color: #849db5;
 	border: 1px solid #849db5;
 }
 
 
-.button-clear:active {
+.button_clear:active {
 	padding-top: 5px;
 	font-size: 16px;
  	-webkit-box-shadow:0px 2px 5px #58697a, inset 0px 2px 0px #58697a;
@@ -238,7 +272,7 @@
  	box-shadow:0px 2px 5px #58697a, inset 0px 2px 0px #58697a;
 }
 
-.button-send:active {
+.button_send:active {
 	padding-top: 5px;
 	font-size: 16px;
  	-webkit-box-shadow:0px 2px 5px #3ba8c0, inset 0px 2px 0px #3ba8c0;

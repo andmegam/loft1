@@ -87,47 +87,52 @@
 			</aside>
 			<section class="content">
 				<article class="mycontact">
-					<h1 class="mycontact-header">У вас интересный проект? Напишите мне</h1>
+					<h1 class="mycontact_header">У вас интересный проект? Напишите мне</h1>
 
-					<form class="contact-form form" method="post" action="php/form_contacts.php">
-						<span class="row-top clearfix">
+					<form class="contact_form form" method="post" action="php/form_contacts.php">
 
+						<div class="sever_mess">
+							<div class="server_mess_title">response_server</div>
+							<div class="server_mess_desc">text_server</div>
+						</div>
+
+						<span class="row_top clearfix">
 							<div class="form__item leadname">
-								<label class="label-text" for="leadname">Имя</label>
-								<input id="leadname" class="input-text" name="leadname"  type="text" placeholder="Как к вам обращаться">
+								<label class="label_text" for="leadname">Имя</label>
+								<input id="leadname" class="input_text" name="leadname"  type="text" placeholder="Как к вам обращаться">
 								<span class="tooltipstext posleft">&nbp;</span>
 							</div>
 
 							<div class="form__item leademail">
-								<label class="label-text" for="leademail">Email</label>
-								<input id="leademail" class="input-text" name="leademail" type="text" placeholder="Куда мне писать">
+								<label class="label_text" for="leademail">Email</label>
+								<input id="leademail" class="input_text" name="leademail" type="text" placeholder="Куда мне писать">
 								<span class="tooltipstext posright">&nbp;</span>
 							</div>
 						</span>
 
 						<div class="form__item leadmessage">
-							<label class="label-text" for="leadmessage">Сообщение</label>
-							<textarea id="leadmessage" class="textarea-text" name="leadmessage" placeholder="Кратко в чем суть"></textarea>
+							<label class="label_text" for="leadmessage">Сообщение</label>
+							<textarea id="leadmessage" class="textarea_text" name="leadmessage" placeholder="Кратко в чем суть"></textarea>
 							<span class="tooltipstext posleft">&nbp;</span>
 						</div>
 
 						<div class="form__item">
 							<span class="clearfix">
-								<label class="label-text clearfix"  for="leadcapture">Проверочный код</label>
+								<label class="label_text clearfix"  for="leadcapture">Проверочный код</label>
 								<span class="capture_img">
 									<img src="php/captcha.php" alt="capturecode" />
 								</span>
 
-								<span class="capture-code">
-									<input id="leadcapture" class="input-text" name="leadcapture" type="text" placeholder="Введите код">
-									<span class="tooltipstext posleft">&nbp;</span>
+								<span class="capture_code">
+									<input id="leadcapture" class="input_text" name="leadcapture" type="text" placeholder="Введите код">
+									<span class="tooltipstext posright">&nbp;</span>
 								</span>
 							</span>
 						</div>
 
 						<div class="buttons clearfix">
-							<button class="button button-send" type="submit" value="submit">Отправить</button>
-							<button class="button button-clear" type="reset" value="clear">Очистить</button>
+							<button class="button button_send" type="submit" value="submit">Отправить</button>
+							<button class="button button_clear" type="reset" value="clear">Очистить</button>
 						</div>
 					</form>
 				</article>

@@ -103,7 +103,7 @@
 						 		</div>
 						 	</div>
 						 	<div class="project-link"><a href="#">www.site1.ru</a></div>
-						 	<div class="project-descr">Информация о проекте 1 превью 2 строки....</div>
+						 	<div class="project_descr">Информация о проекте 1 превью 2 строки....</div>
 						 </div> -->
 
 						<!-- <div class="project">
@@ -114,7 +114,7 @@
 						 		</div>
 						 	</div>
 						 	<div class="project-link"><a href="#">www.site2.ru</a></div>
-						 	<div class="project-descr">Информация о проекте 1 превью 2 строки....</div>
+						 	<div class="project_descr">Информация о проекте 1 превью 2 строки....</div>
 						 </div> -->
 
 						<!-- <div class="project">
@@ -125,7 +125,7 @@
 								</div>
 							</div>
 							<div class="project-link"><a href="#">www.site3.ru</a></div>
-							<div class="project-descr">Информация о проекте 1 превью 2 строки....</div>
+							<div class="project_descr">Информация о проекте 1 превью 2 строки....</div>
 						</div> -->
 
 						<!-- <div class="project">
@@ -136,7 +136,7 @@
 								</div>
 							</div>
 							<div class="project-link"><a href="#">www.site4.ru</a></div>
-							<div class="project-descr">Информация о проекте 1 превью 2 строки....</div>
+							<div class="project_descr">Информация о проекте 1 превью 2 строки....</div>
 						</div> -->
 
 
@@ -154,28 +154,32 @@
 	</div>
 
 
-	<form id="popup_form" class="popup form" method="post" action="php/form_add_project.php">
-		<div class="popup-header clearfix">
+	<form id="popup_form" class="popup form" method="post" action="php/form_add_project.php" enctype="multipart/form-data">
+		<div class="popup_header clearfix">
 			<div class="text">Добавление проекта</div>
 			<div class="close">
-				<div class="close-img" id="icon_popup_close">Закрыть</div>
+				<div class="close_img" id="icon_popup_close">Закрыть</div>
 			</div>
 		</div>
-		<div class="popup-body">
+		<div class="popup_body">
+
+			<div class="sever_mess">
+				<div class="server_mess_title">response_server</div>
+				<div class="server_mess_desc">text_server</div>
+			</div>
 
 			<div class="form__item">
-				<label class="label-text" for="project-name">Название проекта</label>
-				<input id="project-name" class="input-text"  type="text" name="project-name" placeholder="Введите название">
-				<input id="unload-file2" name="project-file2" type="file" >
+				<label class="label_text" for="project_name">Название проекта</label>
+				<input id="project_name" class="input_text"  type="text" name="project_name" placeholder="Введите название">
 				<span class="tooltipstext posleft">&nbp;</span>
 			</div>
 
 			<div class="form__item">
-				<label class="label-text" for="unload-file">Картинка проекта</label>
-				<label class="label-unload-file" for="unload-file">
+				<label class="label_text" for="unload_file">Картинка проекта</label>
+				<label class="label_unload_file" for="unload_file">
 					<span class="unload_paht_file">Загрузите изображение</span>
-					<span class="label-unload-file-img">icon-unload-file</span>
-					<input id="unload-file" class="unload-file" name="project-file" type="file" >
+					<span class="label_unload_file_img">icon-unload_file</span>
+					<input id="unload_file" class="unload_file" multiple="multiple" name="project_file" type="file" >
 				</label>
 				<span class="tooltipstext posleft">&nbp;</span>
 			</div>
@@ -183,19 +187,19 @@
 
 
 			<div class="form__item">
-				<label class="label-text" for="project-url">URL проекта</label>
-				<input id="project-url" class="input-text" type="text" name="project-url" placeholder="Добавьте ссылку">
+				<label class="label_text" for="project_url">URL проекта</label>
+				<input id="project_url" class="input_text" type="text" name="project_url" placeholder="Добавьте ссылку">
 				<span class="tooltipstext posleft">&nbp;</span>
 			</div>
 
 			<div class="form__item">
-				<label class="label-text" for="project-desc">Описание</label>
-				<textarea id="project-desc" class="textarea-text" name="project-desc" placeholder="Пару слов о вашем проекте"></textarea>
+				<label class="label_text" for="project_desc">Описание</label>
+				<textarea id="project_desc" class="textarea_text" name="project_desc" placeholder="Пару слов о вашем проекте"></textarea>
 				<span class="tooltipstext posleft">&nbp;</span>
 			</div>
 
-			<div class="span-center">
-				<button class="button button-add" id="button-add" type="submit" value="submit">Добавить</button>
+			<div class="span_center">
+				<button class="button button_add" id="button_add" name="submit" type="submit" value="submit">Добавить</button>
 			</div>
 		</div>
 	</form>
