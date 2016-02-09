@@ -12,7 +12,7 @@
 
 	font-family: 'fira_sanslight';
 	border-radius: 4px;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
 .login_form {

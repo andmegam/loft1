@@ -41,6 +41,8 @@ if (isset($project_name) && $project_file && isset($project_url) != '' && isset(
 			mkdir('../'.$project_dir, 0777);
 		}
 
+		return;
+
 		// Закачиваем файл
 		if(is_uploaded_file($project_file["tmp_name"]))
 	    {
@@ -49,24 +51,31 @@ if (isset($project_name) && $project_file && isset($project_url) != '' && isset(
 	    	$new_file_name =  strtolower(translit($old_file_name));
 
 			// Полный путь куда копировать
-	       	$final_path = $_SERVER['DOCUMENT_ROOT']."/".$project_dir."/".$new_file_name;
+			$final_path = $project_dir."/".$new_file_name;
 
 	     	// Перемещаем файл в нужную нам папку.
-	        move_uploaded_file($project_file["tmp_name"], $final_path);
+	        $result_move = move_uploaded_file($project_file["tmp_name"], "../".$final_path);
 
-	     	// Путь к файлу для БД
-	       	$path_to_sql = $project_dir."/".$new_file_name;
+			if (!$result_move) {
+			    $sever_mes = array( 'status' => 'server_error', 'status_text' => 'Ошибка перемещения файла в нужную директорию');
+				echo json_encode($sever_mes);
+				return;
+			}
 
 	       	// Запись в БД
 	       	$sql = "INSERT INTO projects (projectname,projecturl,projectdesc, projectimg)
-			VALUES ('".$project_name."','".$project_url."' ,'".$project_desc."','".$path_to_sql."');";
+			VALUES ('".$project_name."','".$project_url."' ,'".$project_desc."','".$final_path."');";
 	        $result = mysqli_query($mysqli,$sql) or die(mysqli_error()) ;
 
 	       	if($result) {
 	       		$sever_mes = array( 'status' => 'server_ok', 'status_text' => 'Проект успешно добавлен');
-	       	}
-			echo json_encode($sever_mes);
-			return;
+				echo json_encode($sever_mes);
+				return;
+	       	}else {
+				$sever_mes = array( 'status' => 'server_error', 'status_text' => 'Ошибка добавления проекта в БД');
+				echo json_encode($sever_mes);
+				return;
+			}
 
 	   } else {
 		    $sever_mes = array( 'status' => 'server_error', 'status_text' => 'Ошибка загрузки файла на сервер');

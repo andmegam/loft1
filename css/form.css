@@ -1,44 +1,34 @@
 /* POPUP BEGIN*/
-.blackout {
-	z-index:3;
-	position:fixed;
-	background-color:#000;
-	opacity:0.8;
-	-moz-opacity:0.8;
-	filter:alpha(opacity=80);
-	width:100%;
-	height:100%;
-	top:0;
-	left:0;
-	cursor:pointer;
-	display:none;
-	font-size: 0px;
-}
-
-
-::-moz-placeholder {
-    color: #48cbe8;
-}
-
-::-webkit-input-placeholder {
-    color: #48cbe8;
-}
+.popup__overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.7);
+    text-align: center;
+	z-index: 1;
+    }
+    .popup__overlay:after {
+        display: inline-block;
+        height: 100%;
+        width: 0;
+        vertical-align: middle;
+        content: ''
+    }
 
 .popup {
-	position: absolute;
-	display: block;
-	top: -3000px;
+	display: inline-block;
 	margin: 0 auto;
 	width: 362px;
 	border-radius: 5px;
-	-webkit-border-radius: 4px/7px;
-	-moz-border-radius: 4px/7px;
-	border-radius: 4px/7px;
 	background-color: #eff3f7;
 	-webkit-box-shadow: 0 6px 12px 1px rgba(13,16,7,.35);
 	-moz-box-shadow: 0 6px 12px 1px rgba(13,16,7,.35);
 	box-shadow: 0 6px 12px 1px rgba(13,16,7,.35);
-	z-index: 5;
+	vertical-align: middle;
+	text-align: left;
 }
 
 .popup_header {
@@ -46,6 +36,8 @@
 	background: #48cbe8;
 	border-bottom: 9px solid #67dffa;
 	padding: 15px 15px 40px 15px;
+	border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 .popup_header .text {
 	float: left;
@@ -73,6 +65,15 @@
 /*POPUP END*/
 
 /* Contacts_form BEGIN*/
+
+::-moz-placeholder {
+    color: #48cbe8;
+}
+
+::-webkit-input-placeholder {
+    color: #48cbe8;
+}
+
 
 .label_text {
   display: block;

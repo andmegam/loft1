@@ -80,7 +80,7 @@
 	float: left;
     min-width: 50px;
 	min-height: 50px;
-	background-image: url("../img/course.png") no-repeat;
+	background: url("../img/course.png")  center center no-repeat;
 }
 
 .row-first {

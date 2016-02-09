@@ -95,7 +95,7 @@
 					<h1 class="myinfo-header">Мои работы</h1>
 					<div class="myinfo-container works">
 
-						<!-- <div class="project">
+						 <div class="project">
 						 	<div class="hover-img">
 						 		<img src="http://loremflickr.com/240/150" alt="site1-name" class="project-img">
 						 		<div class="zoom-wrapper">
@@ -104,9 +104,9 @@
 						 	</div>
 						 	<div class="project-link"><a href="#">www.site1.ru</a></div>
 						 	<div class="project_descr">Информация о проекте 1 превью 2 строки....</div>
-						 </div> -->
+						 </div>
 
-						<!-- <div class="project">
+						 <div class="project">
 						 	<div class="hover-img">
 						 		<img src="http://loremflickr.com/250/160" alt="site2-name" class="project-img">
 						 		<div class="zoom-wrapper">
@@ -115,9 +115,9 @@
 						 	</div>
 						 	<div class="project-link"><a href="#">www.site2.ru</a></div>
 						 	<div class="project_descr">Информация о проекте 1 превью 2 строки....</div>
-						 </div> -->
+						 </div>
 
-						<!-- <div class="project">
+						 <div class="project">
 							<div class="hover-img">
 								<img src="http://loremflickr.com/260/170" alt="site3-name" class="project-img">
 								<div class="zoom-wrapper">
@@ -126,9 +126,9 @@
 							</div>
 							<div class="project-link"><a href="#">www.site3.ru</a></div>
 							<div class="project_descr">Информация о проекте 1 превью 2 строки....</div>
-						</div> -->
+						</div>
 
-						<!-- <div class="project">
+						 <div class="project">
 							<div class="hover-img">
 								<img src="http://loremflickr.com/270/180" alt="site4-name" class="project-img">
 								<div class="zoom-wrapper">
@@ -137,8 +137,7 @@
 							</div>
 							<div class="project-link"><a href="#">www.site4.ru</a></div>
 							<div class="project_descr">Информация о проекте 1 превью 2 строки....</div>
-						</div> -->
-
+						</div>
 
 						<div class="project newproject" id="link_popup_show">
 							<i class="icon sprite-addproject">Иконка: добавление проекта</i>
@@ -153,57 +152,56 @@
 		<div class="empty"></div>
 	</div>
 
+	<div class="popup__overlay">
+		<div class="popup">
+			<form id="popup_form" class="form" method="post" action="php/form_add_project.php" enctype="multipart/form-data">
+				<div class="popup_header clearfix">
+					<div class="text">Добавление проекта</div>
+					<div class="close">
+						<div class="close_img" id="icon_popup_close">Закрыть</div>
+					</div>
+				</div>
+				<div class="popup_body">
+					<div class="sever_mess">
+						<div class="server_mess_title">response_server</div>
+						<div class="server_mess_desc">text_server</div>
+					</div>
 
-	<form id="popup_form" class="popup form" method="post" action="php/form_add_project.php" enctype="multipart/form-data">
-		<div class="popup_header clearfix">
-			<div class="text">Добавление проекта</div>
-			<div class="close">
-				<div class="close_img" id="icon_popup_close">Закрыть</div>
-			</div>
+					<div class="form__item">
+						<label class="label_text" for="project_name">Название проекта</label>
+						<input id="project_name" class="input_text"  type="text" name="project_name" placeholder="Введите название">
+						<span class="tooltipstext posleft"></span>
+					</div>
+
+					<div class="form__item">
+						<label class="label_text" for="unload_file">Картинка проекта</label>
+						<label class="label_unload_file" for="unload_file">
+							<span class="unload_paht_file">Загрузите изображение</span>
+							<span class="label_unload_file_img">icon-unload_file</span>
+							<input id="unload_file" class="unload_file" multiple="multiple" name="project_file" type="file" >
+						</label>
+						<span class="tooltipstext posleft"></span>
+					</div>
+
+					<div class="form__item">
+						<label class="label_text" for="project_url">URL проекта</label>
+						<input id="project_url" class="input_text" type="text" name="project_url" placeholder="Добавьте ссылку">
+						<span class="tooltipstext posleft"></span>
+					</div>
+
+					<div class="form__item">
+						<label class="label_text" for="project_desc">Описание</label>
+						<textarea id="project_desc" class="textarea_text" name="project_desc" placeholder="Пару слов о вашем проекте"></textarea>
+						<span class="tooltipstext posleft"></span>
+					</div>
+
+					<div class="span_center">
+						<button class="button button_add" id="button_add" name="submit" type="submit" value="submit">Добавить</button>
+					</div>
+				</div>
+			</form>
 		</div>
-		<div class="popup_body">
-
-			<div class="sever_mess">
-				<div class="server_mess_title">response_server</div>
-				<div class="server_mess_desc">text_server</div>
-			</div>
-
-			<div class="form__item">
-				<label class="label_text" for="project_name">Название проекта</label>
-				<input id="project_name" class="input_text"  type="text" name="project_name" placeholder="Введите название">
-				<span class="tooltipstext posleft">&nbp;</span>
-			</div>
-
-			<div class="form__item">
-				<label class="label_text" for="unload_file">Картинка проекта</label>
-				<label class="label_unload_file" for="unload_file">
-					<span class="unload_paht_file">Загрузите изображение</span>
-					<span class="label_unload_file_img">icon-unload_file</span>
-					<input id="unload_file" class="unload_file" multiple="multiple" name="project_file" type="file" >
-				</label>
-				<span class="tooltipstext posleft">&nbp;</span>
-			</div>
-
-
-
-			<div class="form__item">
-				<label class="label_text" for="project_url">URL проекта</label>
-				<input id="project_url" class="input_text" type="text" name="project_url" placeholder="Добавьте ссылку">
-				<span class="tooltipstext posleft">&nbp;</span>
-			</div>
-
-			<div class="form__item">
-				<label class="label_text" for="project_desc">Описание</label>
-				<textarea id="project_desc" class="textarea_text" name="project_desc" placeholder="Пару слов о вашем проекте"></textarea>
-				<span class="tooltipstext posleft">&nbp;</span>
-			</div>
-
-			<div class="span_center">
-				<button class="button button_add" id="button_add" name="submit" type="submit" value="submit">Добавить</button>
-			</div>
-		</div>
-	</form>
-	<div id="blackout" class="blackout">Подложка</div>
+	</div>
 
 	<footer class="footer">
 		<div class="container container-footer clearfix">
