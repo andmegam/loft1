@@ -196,7 +196,7 @@ ul {
 	font-size: 20px;
 	text-decoration: none;
 	color: #959aa8;
-	padding: 20px 0px 20px 26px;
+	padding: 20px 20px 20px 26px;
 }
 
 .navigation .navigation-link:hover {
@@ -244,6 +244,7 @@ ul {
 	color: #ffffff;
 	font-size: 17px;
 	padding-left: 82px;
+	white-space: nowrap;
 }
 .contacts-item-link:hover {
 	text-decoration: underline;
@@ -440,9 +441,6 @@ ul {
     height: 20px;
     background-position: -496px -5px;
 }
-
-
-
 
 .sprite-vuz {
     width: 41px;

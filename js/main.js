@@ -1,21 +1,3 @@
-/* Navigation*/
-(function () {
-  var navelements = document.getElementById('navigation-list').getElementsByTagName('li'),
-      currentpage = location.pathname.match(/[^/]*$/);
-
-  if (navelements.length > 0) {
-        for(var i = 0, len = navelements.length;  i < len; i++) {
-          if (currentpage[0] === "" ) {
-            currentpage = "index.html";
-          }
-
-          if (navelements[i].querySelector('a').href.indexOf(currentpage) !=-1) {
-              navelements[i].className += " current";
-          }
-        }
-    }
-})();
-
 (function(){
   var $form;
 
@@ -111,7 +93,8 @@
    *
    */
 (function() {
-  var my;
+  var my,
+      $currentForm;
 
   publicInterface();
 
@@ -157,21 +140,24 @@
       $sever_mess = $form.find('.sever_mess');
 
     if (status === 'server_before') {
-      $sever_mess.removeClass('server_error server_ok');
-      $sever_mess.addClass('server_before');
-      $sever_mess.find('.server_mess_title').text('Одну минуточку...');
+      $sever_mess.removeClass('server_error server_ok')
+                 .addClass('server_before')
+                 .find('.server_mess_title')
+                 .text('Одну минуточку...');
     }
 
     if (status === 'server_error' ) {
-      $sever_mess.removeClass('server_ok');
-      $sever_mess.addClass('server_error');
-      $sever_mess.find('.server_mess_title').text('Ошибка!');
+      $sever_mess.removeClass('server_ok')
+                 .addClass('server_error')
+                 .find('.server_mess_title')
+                 .text('Ошибка!');
     }
 
     if (status === 'server_ok') {
-      $sever_mess.removeClass('server_error');
-      $sever_mess.addClass('server_ok');
-      $sever_mess.find('.server_mess_title').text('Спасибо!');
+      $sever_mess.removeClass('server_error')
+                 .addClass('server_ok')
+                 .find('.server_mess_title')
+                 .text('Спасибо!');
     }
 
     $sever_mess.find('.server_mess_desc').text(status_text);
@@ -180,24 +166,36 @@
   /**
    * Вывод сообщения перед отправкой данных на сервер
    */
-  function ajaxBeforeSendForm($form) {
+  function ajaxBeforeSendForm() {
     var jsondata = {'status':'server_before', 'status_text':'Подождите ответ от сервера.'};
-    createStatusServer ($form, jsondata);
+    createStatusServer ($currentForm, jsondata);
   }
 
   /**
    * Вывод сообщения при упешной отправке данных на сервер
    */
-  function ajaxSuccessForm($form, jsondata) {
-    createStatusServer ($form, jsondata);
+  function ajaxSuccessForm(jsondata) {
+    var idform = $currentForm.attr('id'),
+        status = jsondata['status'];
+
+    createStatusServer ($currentForm, jsondata);
+
+    if (idform === 'login_form' && status === 'server_ok') {
+       setTimeout("document.location.href='../loft1php'", 1000);
+    }
+
+    if (idform === 'popup_form' && status === 'server_ok') {
+       setTimeout("document.location.href='../loft1php/myworks.php'", 1000);
+    }
+
   }
 
   /**
    * Вывод сообщения об ошибке на сервере
    */
-  function ajaxErrorForm($form) {
+  function ajaxErrorForm(error) {
     var jsondata = {'status':'server_error', 'status_text':'Ошибка сервера'};
-    createStatusServer ($form, jsondata);
+    createStatusServer ($currentForm, jsondata);
   }
 
   /**
@@ -259,10 +257,12 @@
               dataType: 'json',
               contentType: false,
               processData: false,
-              beforeSend: ajaxBeforeSendForm.bind(this, $form),
-              success: ajaxSuccessForm.bind(this, $form),
-              error: ajaxErrorForm.bind(this, $form)
+              beforeSend: ajaxBeforeSendForm,
+              success: ajaxSuccessForm,
+              error: ajaxErrorForm
             };
+
+            $currentForm = $form;
 
         $.ajax(ajaxOptions);
       }
@@ -270,4 +270,25 @@
   }
 
   window.controlForm = my;
+})();
+
+/* Navigation*/
+(function () {
+
+  if(document.getElementById('navigation-list')) {
+    var navelements = document.getElementById('navigation-list').getElementsByTagName('li'),
+        currentpage = location.pathname.match(/[^/]*$/);
+
+    if (navelements.length > 0) {
+      for(var i = 0, len = navelements.length;  i < len; i++) {
+        if (currentpage[0] === "" ) {
+          currentpage = "index.php";
+        }
+
+        if (navelements[i].querySelector('a').href.indexOf(currentpage) !=-1) {
+            navelements[i].className += " current";
+        }
+      }
+    }
+  }
 })();
